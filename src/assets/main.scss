@@ -1,0 +1,108 @@
+@import "./variables.scss";
+
+* {
+  transition: $smooth;
+}
+html, body {
+  font-family: $poppins;
+}
+
+.hyyp-calendar-wrapper {
+  overflow: hidden;
+  width: 80vw;
+  height: 80vh;
+  margin: 3rem auto;
+
+  .hyyp-calendar {
+     border: 1px solid salmon;
+     
+     .fc-header-toolbar, .fc-toolbar {
+        display: flex;
+        border: 1px solid salmon;
+        justify-content: flex-start;
+        width: max-content;
+        position: relative;
+        .fc-toolbar-chunk {
+          margin: 10px;
+          display: flex;
+          justify-content: flex-start;
+          width: max-content;
+          height: max-content;
+          &:first-child {
+            display: flex;
+            order: 1;
+            
+            .fc-toolbar-title {
+              margin: 0;
+              font-size: 1.5rem;
+            }
+          }
+          &:nth-child(3) {
+            display: flex;
+            flex-direction: row-reverse;
+            order: 2;
+            .fc-button-group {
+              display: flex;
+              justify-content: space-between;
+              width: max-content;
+              margin: 0;
+              padding: 0;
+              button.fc-button {
+                background: none;
+                color: $gunMetal;
+                border: none;
+                border-radius: 50%;
+                max-width: 42px;
+                margin: 0 5px;
+                span.fc-icon-chevron-right {
+                  font-size: 2rem;
+                  transform: translate(-3px, 0px);
+                }
+                span.fc-icon-chevron-left {
+                  font-size: 2rem;
+                  transform: translate(-6px, 0px);
+                
+                }
+                &:hover {
+                  background-color: rgba($grey_mid,0.2);
+                }
+                &:active, &:focus {
+                  border: none;
+                  outline: none;
+                  box-shadow:none;
+                }
+              }
+            }
+          }
+          button.fc-today-button {
+            position: relative;
+            width: max-content;
+            height: 30px;
+            margin-left: 50px;
+            margin-top: 7px;
+            border: none;
+            border-bottom: 3px solid $hyyp_primary;
+            padding: 0;
+            background: none;
+            
+            color: $black;
+            font-weight: $medium;
+            text-transform: capitalize;
+            cursor: pointer;
+            &:hover {
+              border-color: transparent;
+            }
+          }
+          button.fc-today-button:disabled {
+            // border-color: transparent;
+            opacity: 1;
+          }
+        }
+     }
+     .fc-scrollgrid-sync-inner {
+      display: flex;
+      text-transform: uppercase;
+      font-size:0.8rem;
+     }
+  }
+}
