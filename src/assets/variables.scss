@@ -40,11 +40,11 @@ Animations
 $smooth: ease-in-out 350ms all;
 
 .slideIn {
-  animation: slideIn 300ms ease-in-out;
+  animation: slideIn $smooth;
   opacity: 1;
 }
 .slideOut {
-  animation: slideOut 300ms ease-in-out;
+  animation: slideOut $smooth;
   opacity: 0;
   display: none;
 }
